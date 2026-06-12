@@ -7,9 +7,12 @@ services behind a single FastAPI app, plus the Watch Night WebSocket.
 from __future__ import annotations
 
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import RedirectResponse
+from fastapi.staticfiles import StaticFiles
 
 from app.api import auth, profiles, recommendations, sessions, social
 from app.config import get_settings
@@ -50,6 +53,19 @@ app.include_router(recommendations.router)
 @app.get("/health", tags=["meta"])
 def health() -> dict:
     return {"status": "ok", "service": settings.app_name, "version": "0.1.0"}
+
+
+# --- Web frontend (vanilla JS SPA, no build step) ---------------------------
+_STATIC_DIR = Path(__file__).parent / "static"
+
+
+@app.get("/", include_in_schema=False)
+def root() -> RedirectResponse:
+    return RedirectResponse(url="/app/")
+
+
+# Mounted last so API routes above take precedence. html=True serves index.html.
+app.mount("/app", StaticFiles(directory=_STATIC_DIR, html=True), name="frontend")
 
 
 @app.websocket("/ws/sessions/{session_id}")

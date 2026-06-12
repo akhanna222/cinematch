@@ -1,0 +1,28 @@
+// Small bundled demo catalogue so the UI has real cards to show before the
+// TMDB catalogue ingestion increment lands. ids are arbitrary demo ids.
+export const CATALOGUE = [
+  { id: "tt0816692", title: "Interstellar", year: 2014, genres: ["sci-fi", "drama"] },
+  { id: "tt0468569", title: "The Dark Knight", year: 2008, genres: ["action", "thriller"] },
+  { id: "tt6751668", title: "Parasite", year: 2019, genres: ["thriller", "drama"] },
+  { id: "tt1160419", title: "Dune", year: 2021, genres: ["sci-fi", "adventure"] },
+  { id: "tt0110912", title: "Pulp Fiction", year: 1994, genres: ["crime", "drama"] },
+  { id: "tt4633694", title: "Spider-Verse", year: 2018, genres: ["animation", "action"] },
+  { id: "tt0114369", title: "Se7en", year: 1995, genres: ["crime", "thriller"] },
+  { id: "tt1517268", title: "Barbie", year: 2023, genres: ["comedy", "fantasy"] },
+  { id: "tt15398776", title: "Oppenheimer", year: 2023, genres: ["drama", "history"] },
+  { id: "tt0137523", title: "Fight Club", year: 1999, genres: ["drama", "thriller"] },
+  { id: "tt0109830", title: "Forrest Gump", year: 1994, genres: ["drama", "romance"] },
+  { id: "tt2582802", title: "Whiplash", year: 2014, genres: ["drama", "music"] },
+  { id: "tt0903747", title: "Breaking Bad", year: 2008, genres: ["crime", "drama"] },
+  { id: "tt0944947", title: "Game of Thrones", year: 2011, genres: ["fantasy", "drama"] },
+  { id: "tt5180504", title: "The Witcher", year: 2019, genres: ["fantasy", "adventure"] },
+  { id: "tt0317248", title: "City of God", year: 2002, genres: ["crime", "drama"] },
+  { id: "tt0253474", title: "The Pianist", year: 2002, genres: ["drama", "history"] },
+  { id: "tt8503618", title: "Hamilton", year: 2020, genres: ["music", "history"] },
+  { id: "tt1375666", title: "Inception", year: 2010, genres: ["sci-fi", "thriller"] },
+  { id: "tt0167260", title: "LOTR: Return", year: 2003, genres: ["fantasy", "adventure"] },
+  { id: "tt0407887", title: "The Departed", year: 2006, genres: ["crime", "thriller"] },
+  { id: "tt1853728", title: "Django Unchained", year: 2012, genres: ["western", "drama"] },
+  { id: "tt0482571", title: "The Prestige", year: 2006, genres: ["thriller", "drama"] },
+  { id: "tt0468569b", title: "Knives Out", year: 2019, genres: ["comedy", "crime"] },
+];

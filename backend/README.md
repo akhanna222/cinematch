@@ -58,10 +58,25 @@ pip install -e ".[dev]"
 # Run tests
 pytest -q
 
-# Run the API (SQLite, zero infra)
+# Run the API + web UI (SQLite, zero infra)
 uvicorn app.main:app --reload
-# -> http://localhost:8000/docs
+# Web app  -> http://localhost:8000/app/
+# API docs -> http://localhost:8000/docs
 ```
+
+### Web frontend
+
+A dependency-free vanilla-JS SPA is served by the API itself at `/app/`
+(mounted from `app/static/`, no build step). It covers all three pillars:
+onboarding/seed-rating → Movie DNA radar → Discover feed → Watch Night swipe.
+For social discovery you need 20+ ratings and a second eligible user (sign up
+in a second browser/incognito window).
+
+### Run on Google Colab
+
+`notebooks/CineMatch_Colab.ipynb` installs the backend, runs the tests, demos
+the algorithms inline, and can launch the live API + UI via an ngrok tunnel.
+Open it from https://colab.research.google.com (File → Open → GitHub).
 
 ### With Postgres + Redis
 
